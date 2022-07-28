@@ -1,7 +1,8 @@
 package main
+
 import "fmt"
 
-func isAnagram(s string,t string) bool{
+func isAnagram(s string, t string) bool {
 	lenS := len(s)
 	lenT := len(t)
 	if lenS != lenT {
@@ -15,7 +16,7 @@ func isAnagram(s string,t string) bool{
 		anagramMap[string(t[i])]--
 	}
 
-for i := 0; i < lenS; i++ {
+	for i := 0; i < lenS; i++ {
 		if anagramMap[string(s[i])] != 0 {
 			return false
 		}
@@ -25,9 +26,9 @@ for i := 0; i < lenS; i++ {
 }
 
 func main() {
-	output := isAnagram("abc", "bac")
+	output := isAnagram("adobe", "abode")
 	fmt.Println(output)
 
-	output = isAnagram("abc", "bc")
+	output = isAnagram("binary", "brainy")
 	fmt.Println(output)
 }
